@@ -5,16 +5,34 @@ var app = require('http').createServer(handler)
 app.listen(8080);
 
 function handler (req, res) {
-  fs.readFile(__dirname + '/client.html',
-  function (err, data) {
-    if (err) {
-      res.writeHead(500);
-      return res.end('Error loading client.html');
-    }
+	console.info('handler called');
+console.info(req.url);
+	if (req.url.contains('main.js')) {
+		console.info('serving static asset main.js');
+		fs.readFile(__dirname + '/main.js', function(err, data) {
+			if (err) {
+				console.warn('error serving main.js');
+				console.info(err);
+				res.writeHead(500);
+				return res.end('Error loading main.js');
+			}
+		});
+	} 
+console.log(req.url);
+	if (req.url.contains('client.html') == true || req.url == "/") {
+		console.info('serving static asset client.html');
+		fs.readFile(__dirname + '/client.html', function (err, data) {
+			if (err) {
+				console.warn('error serving client.html');
+				console.info('err');
+				res.writeHead(500);
+				return res.end('Error loading client.html');
+			}
 
-    res.writeHead(200);
-    res.end(data);
-  });
+			res.writeHead(200);
+			res.end(data);
+		});
+	}
 }
 
 //todo load conf from file
