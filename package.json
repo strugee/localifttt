@@ -1,14 +1,17 @@
-"name" : "localIFTTT"
-"version" : 0.1
-"description" : "IFTTT-like service powered by local actions instead of remote ones. See iftt.com for the service that inspired this."
-"bugs" : { "url" : "http://github.com/strugee/localifttt/issues",
-         , "email" : "alexander3223098@gmail.com"
-         }
-"license" : "GPL3"
-"author" : { "name" : "Alex Jordan"
-           , "email" : "alexander3223098@gmail.com"
-           , "url" : "http://strugee.net"
-           }
-"files" : ["server.js"]
-"main" : "server.js"
-"dependencies" : { "socket.io" : "*" }
+{
+	"name" : "localIFTTT" ,
+	"version" : "0.0.1" ,
+	"description" : "IFTTT-like service powered by local actions instead of remote ones. See iftt.com for the service that inspired this." ,
+	"bugs" : { "url" : "http://github.com/strugee/localifttt/issues"
+	         , "email" : "alexander3223098@gmail.com"
+	         } ,
+	"license" : "GPL3" ,
+	"author" : { "name" : "Alex Jordan"
+	           , "email" : "alexander3223098@gmail.com"
+	           , "url" : "http://strugee.net"
+	           } ,
+	"files" : ["server.js"] ,
+	"main" : "server.js" ,
+	"repository" : { "type" : "git" , "url" : "git://github.com/strugee/localifttt.git" } ,
+	"dependencies" : { "socket.io" : "*" }
+}
